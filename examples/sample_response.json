@@ -1,0 +1,40 @@
+{
+  "note_id": "N001",
+  "extracted_entities": {
+    "age": "45 year old",
+    "sex": "male",
+    "symptoms": ["fever", "productive cough"],
+    "diagnosis": "pneumonia",
+    "medications": ["amoxicillin"]
+  },
+  "guideline_assessment": {
+    "condition_matched": "pneumonia",
+    "guideline_version": "1.0.0",
+    "recommended_drugs_present": ["amoxicillin"],
+    "recommended_drugs_missing": ["azithromycin"],
+    "forbidden_drugs_present": [],
+    "required_tests": ["chest_xray"],
+    "missing_tests": ["chest_xray"],
+    "overall_status": "PARTIAL_COMPLIANCE",
+    "reasoning": [
+      "Matched guideline for condition: pneumonia",
+      "Drug amoxicillin is recommended for pneumonia and is present in prescription. ACCEPTED.",
+      "Drug azithromycin is recommended for pneumonia but not found in prescription. MISSING.",
+      "Test chest_xray is required for pneumonia but not documented. MISSING."
+    ]
+  },
+  "explanation": {
+    "compliance_badge": "PARTIAL COMPLIANCE ⚠",
+    "overall_summary": "Clinical assessment for 45 year old male presenting with fever, productive cough. Diagnosis: pneumonia. Treatment shows partial compliance with guidelines.",
+    "limitations": [
+      "This system is a clinical decision-support prototype only.",
+      "Extracted entities may contain errors. Clinical verification required.",
+      "This system does not replace clinical judgment."
+    ]
+  },
+  "extraction_method": "hybrid",
+  "model_version": "1.0.0",
+  "guideline_version": "1.0.0",
+  "inference_latency_ms": 450.23,
+  "timestamp": "2026-09-01T00:00:00Z"
+}
