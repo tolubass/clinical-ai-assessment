@@ -277,4 +277,5 @@ The image uses Python 3.11 for package compatibility with PyTorch and Transforme
 
 ## AI Tools Disclosure
 
-Claude (Anthropic) used for architecture brainstorming, code assistance, debugging, and documentation. All engineering decisions, validation, and final responsibility remain with the developer.
+Claude (Anthropic) was used as a development support tool for code assistance, debugging, and documentation refinement. The system architecture, technical decisions, implementation choices, validation, testing, and final review were performed and verified by the developer. The developer retains full responsibility for the submitted implementation and its technical decisions.
+
