@@ -1,7 +1,5 @@
 # Clinical AI Assessment — Entity Extraction & Guideline Evaluation
 
-**CHAI AI Engineer Technical Assessment | Tolulope Olowolaju**
-
 ![Python 3.14](https://img.shields.io/badge/Python-3.14-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-API-009688) ![BioBERT](https://img.shields.io/badge/BioBERT-NER-orange) ![MLflow](https://img.shields.io/badge/MLflow-MLOps-blueviolet) ![Docker](https://img.shields.io/badge/Docker-Container-2496ED) ![Tests](https://img.shields.io/badge/Tests-26%20Passed-brightgreen)
 
 ## Problem Statement
