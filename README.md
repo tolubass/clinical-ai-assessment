@@ -42,22 +42,57 @@ API Response (JSON)
 
 ```text
 clinical-ai-assessment/
-|-- data/
-|   |-- raw/                    # Clinical notes and guideline rules
-|   |-- processed/              # Reproducible train/validation/test splits
-|   `-- annotated/              # BIO-annotated NER dataset
-|-- src/
-|   |-- preprocessing/          # Cleaning, tokenization, rule-based fallback
-|   |-- modeling/               # BioBERT training and prediction
-|   |-- guideline_engine/       # Deterministic guideline evaluation
-|   |-- explainability/         # Grounded clinical explanations
-|   `-- api/                    # FastAPI application, routes, and schemas
-|-- models/ner_model/           # Trained model artifacts and metadata
-|-- notebooks/                  # EDA and model evaluation notebooks
-|-- tests/                      # Unit and API tests
-|-- Dockerfile
-|-- requirements.txt
-`-- README.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── data/
+│   ├── raw/
+│   │   ├── clinical_notes.json
+│   │   └── guidelines.json
+│   ├── processed/
+│   │   └── data_splits.json
+│   └── annotated/
+│       └── ner_dataset.json
+├── examples/
+│   ├── sample_request.json
+│   └── sample_response.json
+├── logs/
+│   └── predictions.log
+├── mlruns/
+│   └── mlflow.db
+├── models/
+│   └── ner_model/
+│       ├── config.json
+│       ├── model_metadata.json
+│       ├── tokenizer.json
+│       └── tokenizer_config.json
+├── notebooks/
+│   ├── 01_eda.ipynb
+│   └── 02_model_evaluation.ipynb
+├── src/
+│   ├── config.py
+│   ├── api/
+│   │   ├── main.py
+│   │   ├── routes.py
+│   │   └── schemas.py
+│   ├── explainability/
+│   │   └── explainer.py
+│   ├── guideline_engine/
+│   │   └── evaluator.py
+│   ├── modeling/
+│   │   ├── predictor.py
+│   │   └── trainer.py
+│   └── preprocessing/
+│       └── text_processor.py
+├── tests/
+│   ├── test_api.py
+│   ├── test_guideline_engine.py
+│   └── test_preprocessing.py
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── README.md
+└── requirements.txt
 ```
 
 ## Data Description
