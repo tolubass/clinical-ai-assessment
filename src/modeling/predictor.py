@@ -51,7 +51,6 @@ class ClinicalNERPredictor:
         """
         self.model_dir = Path(model_dir)
         
-        # Auto-detect device
         if device is None:
             self.device = "cuda" if torch.cuda.is_available() else "cpu"
         else:
@@ -61,7 +60,6 @@ class ClinicalNERPredictor:
         logger.info(f"Using device: {self.device}")
         
         try:
-            # Load tokenizer and model
             self.tokenizer = AutoTokenizer.from_pretrained(str(self.model_dir))
             self.model = AutoModelForTokenClassification.from_pretrained(
                 str(self.model_dir)
@@ -69,7 +67,6 @@ class ClinicalNERPredictor:
             self.model.to(self.device)
             self.model.eval()
             
-            # Load metadata
             metadata_path = self.model_dir / "model_metadata.json"
             if metadata_path.exists():
                 with open(metadata_path, "r", encoding="utf-8") as f:
@@ -85,7 +82,6 @@ class ClinicalNERPredictor:
             logger.error(f"Failed to load model: {e}")
             raise RuntimeError(f"Model loading failed: {e}")
         
-        # Initialize preprocessor
         self.preprocessor = ClinicalTextPreprocessor()
     
     def predict(self, text: str) -> Dict[str, Any]:
@@ -127,11 +123,9 @@ class ClinicalNERPredictor:
                 "inference_latency_ms": 0.0,
             }
         
-        # Clean text
         cleaned_text = self.preprocessor.clean(text)
         logger.debug(f"Cleaned text: {cleaned_text}")
         
-        # Tokenize at word level
         word_tokens = self.preprocessor.tokenize(cleaned_text)
         if not word_tokens:
             logger.warning("No tokens after preprocessing")
@@ -160,11 +154,9 @@ class ClinicalNERPredictor:
             max_length=config.MAX_SEQ_LENGTH,
         )
         
-        # Move to device
         input_ids = encodings["input_ids"].to(self.device)
         attention_mask = encodings["attention_mask"].to(self.device)
         
-        # Run inference
         with torch.no_grad():
             outputs = self.model(
                 input_ids=input_ids,
@@ -172,7 +164,6 @@ class ClinicalNERPredictor:
             )
             logits = outputs.logits
         
-        # Get predictions and probabilities
         predictions = torch.argmax(logits, dim=2)
         probabilities = torch.softmax(logits, dim=2)
         
@@ -195,21 +186,19 @@ class ClinicalNERPredictor:
                 word_level_predictions.append(pred_id)
                 word_level_probabilities.append(prob)
         
-        # Convert prediction IDs to label strings
         id2label = self.model.config.id2label
         ner_tags = [id2label[pred_id] for pred_id in word_level_predictions]
         
         logger.debug(f"Tokens: {word_tokens}")
         logger.debug(f"NER Tags: {ner_tags}")
         
-        # Extract structured entities
         extracted = self._extract_entities(word_tokens, ner_tags, word_level_probabilities)
         
         # Post-processing: merge consecutive single-word symptoms
         extracted["symptoms"] = self._merge_consecutive_symptoms(
             extracted["symptoms"], word_tokens
         )
-        
+
         extraction_method = "model"
         
         # Hybrid fallback: if diagnosis is None, use rule-based extraction
@@ -243,10 +232,8 @@ class ClinicalNERPredictor:
             except Exception as e:
                 logger.error(f"Hybrid fallback failed: {e}")
         
-        # Compute confidence scores
         confidence_scores = self._compute_confidence(ner_tags, word_level_probabilities)
         
-        # Calculate latency
         latency_ms = (time.time() - start_time) * 1000
         
         result = {
@@ -407,7 +394,6 @@ class ClinicalNERPredictor:
         symptom_positions = {}
         for symptom in symptoms:
             symptom_words = symptom.lower().split()
-            # Find this symptom in the token list
             for i in range(len(word_tokens) - len(symptom_words) + 1):
                 tokens_match = True
                 for j, word in enumerate(symptom_words):
@@ -480,7 +466,6 @@ class ClinicalNERPredictor:
                     confidence_scores[entity_type] = []
                 confidence_scores[entity_type].append(prob)
         
-        # Compute averages
         result = {}
         for entity_type, probs in confidence_scores.items():
             if probs:
@@ -515,21 +500,19 @@ if __name__ == "__main__":
     print("Clinical NER Predictor - Inference Test Suite")
     print("=" * 80)
     
-    # Load predictor
     try:
         predictor = load_predictor(config.MODEL_SAVE_DIR)
-        print(f"✓ Model loaded from: {config.MODEL_SAVE_DIR}")
+        print(f"Model loaded from: {config.MODEL_SAVE_DIR}")
     except FileNotFoundError as e:
-        print(f"✗ Model not found: {e}")
+        print(f"Model not found: {e}")
         print(f"  Expected location: {config.MODEL_SAVE_DIR}")
         exit(1)
     except RuntimeError as e:
-        print(f"✗ Model loading error: {e}")
+        print(f"Model loading error: {e}")
         exit(1)
     
     print("\n" + "-" * 80)
     
-    # Test cases
     test_notes = [
         (
             "Pneumonia Case",
@@ -554,10 +537,8 @@ if __name__ == "__main__":
         print(f"Clinical Note: {clinical_note}")
         print()
         
-        # Run prediction
         result = predictor.predict(clinical_note)
         
-        # Print results
         print(f"Tokens ({len(result['tokens'])}): {result['tokens']}")
         print(f"NER Tags: {result['ner_tags']}")
         print()

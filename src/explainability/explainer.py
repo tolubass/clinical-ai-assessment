@@ -58,16 +58,16 @@ class ClinicalExplainer:
                 - limitations (list): System limitations and disclaimers
         """
         logger.info("Generating comprehensive clinical explanations")
-        
-        # Extract key information
+
         extracted = prediction.get("extracted", {})
+
         extraction_method = prediction.get("extraction_method", "unknown")
         confidence_scores = prediction.get("confidence_scores", {})
         guideline_status = guideline_assessment.get("overall_status", "UNKNOWN")
         guideline_reasoning = guideline_assessment.get("reasoning", [])
         
-        # Build explanation components
         entity_explanations = self._explain_entities(prediction)
+
         guideline_explanations = self._explain_guidelines(guideline_assessment)
         overall_summary = self._build_summary(extracted, guideline_assessment)
         compliance_badge = self._build_compliance_badge(guideline_status)
@@ -109,7 +109,6 @@ class ClinicalExplainer:
         confidence_scores = prediction.get("confidence_scores", {})
         extraction_method = prediction.get("extraction_method", "model")
         
-        # Age
         if extracted.get("age"):
             confidence = confidence_scores.get("age")
             confidence_str = f"{confidence:.4f}" if confidence else "N/A"
@@ -125,7 +124,6 @@ class ClinicalExplainer:
                 ),
             })
         
-        # Sex
         if extracted.get("sex"):
             confidence = confidence_scores.get("sex")
             confidence_str = f"{confidence:.4f}" if confidence else "N/A"
@@ -141,7 +139,6 @@ class ClinicalExplainer:
                 ),
             })
         
-        # Symptoms
         for symptom in extracted.get("symptoms", []):
             confidence = confidence_scores.get("symptom")
             confidence_str = f"{confidence:.4f}" if confidence else "N/A"
@@ -157,7 +154,6 @@ class ClinicalExplainer:
                 ),
             })
         
-        # Diagnosis
         if extracted.get("diagnosis"):
             confidence = confidence_scores.get("diagnosis")
             confidence_str = f"{confidence:.4f}" if confidence else "N/A"
@@ -177,7 +173,6 @@ class ClinicalExplainer:
                 ),
             })
         
-        # Medications
         for medication in extracted.get("medications", []):
             confidence = confidence_scores.get("medication")
             confidence_str = f"{confidence:.4f}" if confidence else "N/A"
@@ -217,7 +212,6 @@ class ClinicalExplainer:
         reasoning = guideline_assessment.get("reasoning", [])
         condition = guideline_assessment.get("condition_matched")
         
-        # Recommended drugs present
         for drug in guideline_assessment.get("recommended_drugs_present", []):
             # Find the exact reasoning string for this drug
             explanation_text = self._find_reasoning_for_item(drug, "present", reasoning)
@@ -232,7 +226,6 @@ class ClinicalExplainer:
                 "severity": "INFO",
             })
         
-        # Recommended drugs missing
         for drug in guideline_assessment.get("recommended_drugs_missing", []):
             # Find the exact reasoning string for this drug
             explanation_text = self._find_reasoning_for_item(drug, "missing", reasoning)
@@ -247,7 +240,6 @@ class ClinicalExplainer:
                 "severity": "WARNING",
             })
         
-        # Forbidden drugs present
         for drug in guideline_assessment.get("forbidden_drugs_present", []):
             # Find the exact reasoning string for this drug
             explanation_text = self._find_reasoning_for_item(drug, "forbidden", reasoning)
@@ -262,7 +254,6 @@ class ClinicalExplainer:
                 "severity": "CRITICAL",
             })
         
-        # Required tests missing
         for test in guideline_assessment.get("missing_tests", []):
             # Find the exact reasoning string for this test
             explanation_text = self._find_reasoning_for_item(test, "test", reasoning)
@@ -277,7 +268,6 @@ class ClinicalExplainer:
                 "severity": "WARNING",
             })
         
-        # Condition not found
         if guideline_assessment.get("overall_status") == "UNABLE_TO_ASSESS":
             # Find the reasoning string about condition not found
             explanation_text = "The extracted diagnosis is not found in the guideline database."
@@ -527,9 +517,9 @@ if __name__ == "__main__":
         predictor = ClinicalNERPredictor(config.MODEL_SAVE_DIR)
         evaluator = GuidelineEvaluator(config.GUIDELINES_PATH)
         explainer = ClinicalExplainer()
-        print("✓ All pipeline components loaded successfully\n")
+        print("All pipeline components loaded successfully\n")
     except Exception as e:
-        print(f"✗ Failed to load pipeline components: {e}")
+        print(f"Failed to load pipeline components: {e}")
         exit(1)
     
     for note in test_notes:
@@ -556,7 +546,7 @@ if __name__ == "__main__":
             for l in explanation["limitations"]:
                 print(f"  • {l}")
         except Exception as e:
-            print(f"✗ Pipeline error: {e}")
+            print(f"Pipeline error: {e}")
             import traceback
             traceback.print_exc()
         

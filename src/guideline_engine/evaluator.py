@@ -41,12 +41,10 @@ class GuidelineEvaluator:
         with open(guidelines_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         
-        # Extract guidelines dict and version
         if isinstance(data, dict) and "guidelines" in data:
             self.guidelines = data.get("guidelines", {})
             self.guideline_version = data.get("version", "1.0.0")
         else:
-            # Assume direct dictionary of guidelines
             self.guidelines = data
             self.guideline_version = "1.0.0"
     
@@ -80,15 +78,12 @@ class GuidelineEvaluator:
         """
         reasoning: List[str] = []
         
-        # Extract fields with defaults
         diagnosis = extracted_entities.get("diagnosis")
         medications = extracted_entities.get("medications", [])
         
-        # Normalize diagnosis and medications
         normalized_diagnosis = self._normalize(diagnosis) if diagnosis else None
         normalized_medications = [self._normalize(med) for med in medications]
         
-        # Initialize result dict
         result: Dict[str, Any] = {
             "condition_matched": None,
             "guideline_version": self.guideline_version,
@@ -102,13 +97,11 @@ class GuidelineEvaluator:
             "raw_guideline": {},
         }
         
-        # Handle None or empty diagnosis
         if not normalized_diagnosis:
             reasoning.append("No diagnosis found in extracted entities.")
             result["overall_status"] = "UNABLE_TO_ASSESS"
             return result
         
-        # Look up diagnosis in guidelines
         guideline = self.get_guideline(normalized_diagnosis)
         
         if not guideline:
@@ -120,12 +113,10 @@ class GuidelineEvaluator:
             result["condition_matched"] = None
             return result
         
-        # Found matching guideline
         result["condition_matched"] = normalized_diagnosis
         result["raw_guideline"] = guideline
         reasoning.append(f"Matched guideline for condition: {normalized_diagnosis}")
         
-        # Extract guideline recommendations
         recommended_drugs = [
             self._normalize(drug) 
             for drug in guideline.get("recommended_drugs", [])
@@ -145,7 +136,6 @@ class GuidelineEvaluator:
         
         result["required_tests"] = required_tests
         
-        # Check recommended medications
         for med in recommended_drugs:
             if med in normalized_medications:
                 result["recommended_drugs_present"].append(med)
@@ -158,7 +148,6 @@ class GuidelineEvaluator:
                     f"Drug {med} is recommended for {normalized_diagnosis} but not found in prescription. MISSING."
                 )
         
-        # Check forbidden medications
         for med in forbidden_drugs:
             if med in normalized_medications:
                 result["forbidden_drugs_present"].append(med)
@@ -173,7 +162,6 @@ class GuidelineEvaluator:
                 f"Test {test} is required for {normalized_diagnosis} but not documented. MISSING."
             )
         
-        # Determine overall compliance status
         has_forbidden = len(result["forbidden_drugs_present"]) > 0
         all_recommended_present = len(result["recommended_drugs_missing"]) == 0
         all_tests_done = len(result["missing_tests"]) == 0
@@ -215,11 +203,9 @@ class GuidelineEvaluator:
         """
         normalized_condition = self._normalize(condition)
         
-        # Direct lookup
         if normalized_condition in self.guidelines:
             return self.guidelines[normalized_condition]
         
-        # Return empty dict if not found
         return {}
 
 
@@ -250,21 +236,19 @@ if __name__ == "__main__":
     print("Clinical Guideline Evaluation Engine - Test Suite")
     print("=" * 80)
     
-    # Load evaluator
     try:
         evaluator = load_evaluator(GUIDELINES_PATH)
-        print(f"✓ Loaded guidelines from: {GUIDELINES_PATH}")
-        print(f"✓ Guideline version: {evaluator.guideline_version}")
+        print(f"Loaded guidelines from: {GUIDELINES_PATH}")
+        print(f"Guideline version: {evaluator.guideline_version}")
     except FileNotFoundError as e:
-        print(f"✗ Error loading guidelines: {e}")
+        print(f"Error loading guidelines: {e}")
         exit(1)
     except json.JSONDecodeError as e:
-        print(f"✗ Error parsing guidelines JSON: {e}")
+        print(f"Error parsing guidelines JSON: {e}")
         exit(1)
     
     print("\n" + "-" * 80)
     
-    # Test Case 1: Pneumonia with appropriate medication
     print("\nTest Case 1: Pneumonia with appropriate medication")
     print("-" * 80)
     case_1 = {
@@ -284,7 +268,6 @@ if __name__ == "__main__":
     
     print("\n" + "-" * 80)
     
-    # Test Case 2: UTI with appropriate medication
     print("\nTest Case 2: Urinary Tract Infection with appropriate medication")
     print("-" * 80)
     case_2 = {
@@ -304,7 +287,6 @@ if __name__ == "__main__":
     
     print("\n" + "-" * 80)
     
-    # Test Case 3: Unknown condition
     print("\nTest Case 3: Unknown condition not in guidelines")
     print("-" * 80)
     case_3 = {

@@ -97,46 +97,46 @@ async def lifespan(app: FastAPI):
     global _predictor, _evaluator, _explainer
     
     # ── Startup ─────────────────────────────────────────────────
-    logger.info("🚀 Clinical AI Assessment API starting up...")
+    logger.info("Clinical AI Assessment API starting up...")
     
     try:
-        logger.info(f"📦 Loading NER predictor from {config.MODEL_SAVE_DIR}")
+        logger.info(f"Loading NER predictor from {config.MODEL_SAVE_DIR}")
         _predictor = ClinicalNERPredictor(config.MODEL_SAVE_DIR)
-        logger.info(f"✓ NER predictor loaded successfully (version {config.MODEL_VERSION})")
+        logger.info(f"NER predictor loaded successfully (version {config.MODEL_VERSION})")
     except Exception as e:
-        logger.error(f"✗ Failed to load NER predictor: {str(e)}", exc_info=True)
+        logger.error(f"Failed to load NER predictor: {str(e)}", exc_info=True)
         logger.exception(e)
         raise
     
     try:
-        logger.info(f"📋 Loading guideline evaluator from {config.GUIDELINES_PATH}")
+        logger.info(f"Loading guideline evaluator from {config.GUIDELINES_PATH}")
         _evaluator = GuidelineEvaluator(config.GUIDELINES_PATH)
-        logger.info(f"✓ Guideline evaluator loaded successfully (version {config.GUIDELINE_VERSION})")
+        logger.info(f"Guideline evaluator loaded successfully (version {config.GUIDELINE_VERSION})")
     except Exception as e:
-        logger.error(f"✗ Failed to load guideline evaluator: {str(e)}", exc_info=True)
+        logger.error(f"Failed to load guideline evaluator: {str(e)}", exc_info=True)
         logger.exception(e)
         raise
     
     try:
-        logger.info("💡 Loading explainability module")
+        logger.info("Loading explainability module")
         _explainer = ClinicalExplainer()
-        logger.info("✓ Explainability module loaded successfully")
+        logger.info("Explainability module loaded successfully")
     except Exception as e:
-        logger.error(f"✗ Failed to load explainability module: {str(e)}", exc_info=True)
+        logger.error(f"Failed to load explainability module: {str(e)}", exc_info=True)
         logger.exception(e)
         raise
     
     if _predictor and _evaluator and _explainer:
         logger.info("=" * 80)
-        logger.info("✓ All components loaded. API ready for predictions.")
+        logger.info("All components loaded. API ready for predictions.")
         logger.info("=" * 80)
     else:
-        logger.warning("⚠️  Some components failed to load. API may be degraded.")
+        logger.warning("Some components failed to load. API may be degraded.")
     
     yield
     
     # ── Shutdown ────────────────────────────────────────────────
-    logger.info("🛑 Clinical AI Assessment API shutting down...")
+    logger.info("Clinical AI Assessment API shutting down...")
     _predictor = None
     _evaluator = None
     _explainer = None

@@ -43,7 +43,7 @@ def health_check() -> HealthResponse:
         predictor = get_predictor()
         model_loaded = predictor is not None
     except Exception as e:
-        logger.error(f"✗ Predictor unavailable: {e}")
+        logger.error(f"Predictor unavailable: {e}")
         model_loaded = False
     
     status_value = "healthy" if model_loaded else "degraded"
@@ -109,20 +109,16 @@ def predict(request: ClinicalNoteRequest) -> PredictionResponse:
         # ── Run prediction pipeline ─────────────────────────────
         start_time = time.time()
         
-        # Step 1: Extract entities
-        logger.info(f"🔍 Extracting entities from note {request.note_id}")
+        logger.info(f"Extracting entities from note {request.note_id}")
         prediction = predictor.predict(request.text)
         extracted_entities = prediction["extracted"]
         
-        # Step 2: Evaluate guideline compliance
-        logger.info(f"📋 Evaluating guideline compliance for note {request.note_id}")
+        logger.info(f"Evaluating guideline compliance for note {request.note_id}")
         guideline_result = evaluator.evaluate(extracted_entities)
         
-        # Step 3: Generate explanations
-        logger.info(f"💡 Generating explanations for note {request.note_id}")
+        logger.info(f"Generating explanations for note {request.note_id}")
         explanation = explainer.explain(prediction, guideline_result)
         
-        # Calculate total latency
         inference_latency_ms = (time.time() - start_time) * 1000
         
         # ── Build response ──────────────────────────────────────
@@ -148,9 +144,8 @@ def predict(request: ClinicalNoteRequest) -> PredictionResponse:
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
         
-        # Log successful prediction
         logger.info(
-            f"✓ Prediction complete | note_id={request.note_id} | "
+            f"Prediction complete | note_id={request.note_id} | "
             f"latency={inference_latency_ms:.0f}ms | "
             f"status={response.guideline_assessment.overall_status}"
         )
@@ -160,7 +155,7 @@ def predict(request: ClinicalNoteRequest) -> PredictionResponse:
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"✗ Pipeline error for note {request.note_id}: {str(e)}", exc_info=True)
+        logger.error(f"Pipeline error for note {request.note_id}: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Pipeline execution failed: {str(e)}",

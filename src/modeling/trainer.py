@@ -154,11 +154,9 @@ def compute_metrics(
     """
     from sklearn.metrics import classification_report
 
-    # Flatten for token-level evaluation
     flat_preds = [p for seq in predictions for p in seq]
     flat_refs = [r for seq in references for r in seq]
 
-    # Get unique entity labels excluding O
     labels = sorted(set(flat_refs) - {"O"})
 
     report = classification_report(
@@ -175,7 +173,6 @@ def compute_metrics(
         "f1": report["macro avg"]["f1-score"],
     }
 
-    # Per-entity metrics
     for label in labels:
         if label in report:
             clean = label.replace("-", "_").lower()
@@ -292,7 +289,6 @@ def train(config) -> None:
     mlflow.set_experiment(config.MLFLOW_EXPERIMENT_NAME)
 
     with mlflow.start_run(run_name="biobert-ner-v1"):
-        # Log training configuration
         mlflow.log_params({
             "model": config.PRETRAINED_MODEL_NAME,
             "epochs": config.NUM_EPOCHS,
@@ -369,7 +365,7 @@ def train(config) -> None:
                 model.save_pretrained(config.MODEL_SAVE_DIR)
                 tokenizer.save_pretrained(config.MODEL_SAVE_DIR)
                 logger.info(
-                    f"  ✓ New best model saved "
+                    f"  New best model saved "
                     f"(val F1={best_val_f1:.4f})"
                 )
 
@@ -380,7 +376,6 @@ def train(config) -> None:
 
         # ── Final test evaluation ─────────────────────────────
         logger.info("Evaluating on held-out test set...")
-        # Reload best checkpoint
         best_model = AutoModelForTokenClassification.from_pretrained(
             config.MODEL_SAVE_DIR
         )
@@ -403,7 +398,6 @@ def train(config) -> None:
             "test_recall": test_metrics["recall"],
         })
 
-        # Log per-entity test metrics
         for key, val in test_metrics.items():
             if key not in ("precision", "recall", "f1"):
                 mlflow.log_metric(f"test_{key}", val)
