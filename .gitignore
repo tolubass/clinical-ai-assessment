@@ -1,1 +1,4 @@
 models/ner_model/model.safetensors
+**/__pycache__/
+*.pyc
+*.pyo
