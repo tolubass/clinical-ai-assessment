@@ -24,4 +24,7 @@ jobs:
 
       - name: Run tests
         run: |
+          # API tests (tests/test_api.py) require the trained BioBERT
+          # model artifact which is not stored in the repository.
+          # Run full test suite locally after training: python -m pytest tests/ -v
           python -m pytest tests/test_preprocessing.py tests/test_guideline_engine.py -v

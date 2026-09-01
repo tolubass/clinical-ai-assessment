@@ -168,6 +168,22 @@ cd clinical-ai-assessment
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+> ⚠️ **Model Artifact Required**
+> The trained model file (~411MB) exceeds GitHub's file size
+> limit and is not stored in this repository.
+> You must run training before starting the API:
+>
+> ```bash
+> python -m src.preprocessing.text_processor
+> python -m src.modeling.trainer
+> ```
+>
+> Training takes approximately 5-10 minutes on CPU.
+> The API will not start without the trained model.
+
+```bash
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 python -m pytest tests/ -v
 ```
