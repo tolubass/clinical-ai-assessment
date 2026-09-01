@@ -1,0 +1,1467 @@
+2026-08-31 23:35:26 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:35:26 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:35:26 | ERROR    | src.api.main:lifespan:107 - ✗ Failed to load NER predictor: ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+2026-08-31 23:35:26 | INFO     | src.api.main:lifespan:111 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:35:26 | ERROR    | src.api.main:lifespan:115 - ✗ Failed to load guideline evaluator: 'str' object has no attribute 'exists'
+2026-08-31 23:35:26 | INFO     | src.api.main:lifespan:119 - 💡 Loading explainability module
+2026-08-31 23:35:26 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:35:26 | INFO     | src.api.main:lifespan:121 - ✓ Explainability module loaded successfully
+2026-08-31 23:35:26 | WARNING  | src.api.main:lifespan:131 - ⚠️  Some components failed to load. API may be degraded.
+2026-08-31 23:38:24 | ERROR    | src.api.routes:health_check:46 - ✗ Predictor unavailable: Predictor not initialized. Check startup logs.
+2026-08-31 23:40:39 | INFO     | src.api.main:lifespan:136 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:41:06 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:41:06 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:41:06 | ERROR    | src.api.main:lifespan:107 - ✗ Failed to load NER predictor: ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+2026-08-31 23:41:06 | ERROR    | src.api.main:lifespan:108 - ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 292
+               │     └ 3
+               └ <function _main at 0x000001E480C01C70>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 292
+           │    └ <function BaseProcess._bootstrap at 0x000001E480ACBE20>
+           └ <SpawnProcess name='SpawnProcess-2' parent=4612 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001E480ACB1C0>
+    └ <SpawnProcess name='SpawnProcess-2' parent=4612 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001E482ED1550>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-2' parent=4612 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-2' parent=4612 started>
+    │    └ <function subprocess_started at 0x000001E482F8CD50>
+    └ <SpawnProcess name='SpawnProcess-2' parent=4612 started>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=400, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001E482ED16A0>>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\server.py", line 77, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000001E482D46A30>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000001E482ED1550>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000001E482ED16A0>
+           │           │    │             └ [<socket.socket fd=400, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+           │           │    └ <function Server.serve at 0x000001E482F680F0>
+           │           └ <uvicorn.server.Server object at 0x000001E482ED16A0>
+           └ <function run at 0x000001E482A90B40>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001E482F9C7C0>
+           │      └ <function Runner.run at 0x000001E482A90F60>
+           └ <asyncio.runners.Runner object at 0x000001E482ED2510>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packag...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001E482A75380>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001E482ED2510>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001E482A752D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001E482A773D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001E481243A00>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001E4A651FF10>()>
+  File "C:\Program Files\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001E4A651FF10>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001E4A651FF10>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001E4A651FF10>()>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in main
+    await app(scope, self.receive, self.send)
+          │   │      │    │        │    └ <function LifespanOn.send at 0x000001E483054F60>
+          │   │      │    │        └ <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>
+          │   │      │    └ <function LifespanOn.receive at 0x000001E4830550C0>
+          │   │      └ <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>
+          │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001E4A66B7230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 30, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+                 │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+                 │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001E4A6565E80>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001E4A66B7230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+                           │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+                           └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001E4A66B7CB0>
+          └ <fastapi.applications.FastAPI object at 0x000001E4A6565E80>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\errors.py", line 151, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001E4A66B7B60>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001E4A66B7CB0>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 49, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E4A66B7A10>
+          └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001E4A66B7B60>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.routing.APIRouter object at 0x000001E4A655B610>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E4A66B7A10>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <bound method APIRouter.app of <fastapi.routing.APIRouter object at 0x000001E4A655B610>>
+          └ <fastapi.routing.APIRouter object at 0x000001E4A655B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 2726, in app
+    await self.lifespan(scope, receive, send)
+          │    │        │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │        │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001E490025160>>
+          │    │        └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <function Router.lifespan at 0x000001E48417BAB0>
+          └ <fastapi.routing.APIRouter object at 0x000001E4A655B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               │    │                └ <fastapi.applications.FastAPI object at 0x000001E4A6565E80>
+               │    └ <function _merge_lifespan_context.<locals>.merged_lifespan at 0x000001E4A662A2A0>
+               └ <fastapi.routing.APIRouter object at 0x000001E4A655B610>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object _merge_lifespan_context.<locals>.merged_lifespan at 0x000001E4A66FF9A0>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x000001E4A66B7E00>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               │                └ <fastapi.applications.FastAPI object at 0x000001E4A6565E80>
+               └ <function lifespan at 0x000001E4A66294E0>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object lifespan at 0x000001E4A6712200>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x000001E4A6745810>
+
+> File "C:\Users\USER\Desktop\clinical-ai-assessment\src\api\main.py", line 104, in lifespan
+    _predictor = ClinicalNERPredictor(model_save_dir=str(config.MODEL_SAVE_DIR))
+                 │                                       │      └ WindowsPath('C:/Users/USER/Desktop/clinical-ai-assessment/models/ner_model')
+                 │                                       └ <module 'src.config' from 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\src\\config.py'>
+                 └ <class 'src.modeling.predictor.ClinicalNERPredictor'>
+
+TypeError: ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+2026-08-31 23:41:38 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:41:38 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:41:38 | ERROR    | src.api.main:lifespan:107 - ✗ Failed to load NER predictor: ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+2026-08-31 23:41:38 | ERROR    | src.api.main:lifespan:108 - ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 260
+               │     └ 3
+               └ <function _main at 0x00000181E21D1C70>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 260
+           │    └ <function BaseProcess._bootstrap at 0x00000181E206BE20>
+           └ <SpawnProcess name='SpawnProcess-1' parent=7144 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x00000181E206B1C0>
+    └ <SpawnProcess name='SpawnProcess-1' parent=7144 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x00000181E44C1550>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=7144 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=7144 started>
+    │    └ <function subprocess_started at 0x00000181E457CD50>
+    └ <SpawnProcess name='SpawnProcess-1' parent=7144 started>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=564, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x00000181E44C16A0>>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\server.py", line 77, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x00000181E4336A30>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x00000181E44C1550>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x00000181E44C16A0>
+           │           │    │             └ [<socket.socket fd=564, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+           │           │    └ <function Server.serve at 0x00000181E45580F0>
+           │           └ <uvicorn.server.Server object at 0x00000181E44C16A0>
+           └ <function run at 0x00000181E4080B40>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x00000181E458C7C0>
+           │      └ <function Runner.run at 0x00000181E4080F60>
+           └ <asyncio.runners.Runner object at 0x00000181E44C2510>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packag...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000181E4065380>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000181E44C2510>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000181E40652D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000181E40673D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000181E2413A00>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000181862056F0>()>
+  File "C:\Program Files\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000181862056F0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000181862056F0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000181862056F0>()>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in main
+    await app(scope, self.receive, self.send)
+          │   │      │    │        │    └ <function LifespanOn.send at 0x00000181E4E44F60>
+          │   │      │    │        └ <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>
+          │   │      │    └ <function LifespanOn.receive at 0x00000181E4E450C0>
+          │   │      └ <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>
+          │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000018187D67230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 30, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+                 │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+                 │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000018187C15E80>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000018187D67230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+                           │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+                           └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000018187D67CB0>
+          └ <fastapi.applications.FastAPI object at 0x0000018187C15E80>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\errors.py", line 151, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000018187D67B60>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000018187D67CB0>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 49, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000018187D67A10>
+          └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000018187D67B60>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.routing.APIRouter object at 0x0000018187C0B610>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000018187D67A10>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <bound method APIRouter.app of <fastapi.routing.APIRouter object at 0x0000018187C0B610>>
+          └ <fastapi.routing.APIRouter object at 0x0000018187C0B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 2726, in app
+    await self.lifespan(scope, receive, send)
+          │    │        │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │        │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000181F16E5160>>
+          │    │        └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <function Router.lifespan at 0x00000181E576BAB0>
+          └ <fastapi.routing.APIRouter object at 0x0000018187C0B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               │    │                └ <fastapi.applications.FastAPI object at 0x0000018187C15E80>
+               │    └ <function _merge_lifespan_context.<locals>.merged_lifespan at 0x0000018187CDA2A0>
+               └ <fastapi.routing.APIRouter object at 0x0000018187C0B610>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object _merge_lifespan_context.<locals>.merged_lifespan at 0x0000018187DAF9A0>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x0000018187D67E00>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               │                └ <fastapi.applications.FastAPI object at 0x0000018187C15E80>
+               └ <function lifespan at 0x0000018187CD94E0>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object lifespan at 0x0000018187DC2020>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x0000018187DF1810>
+
+> File "C:\Users\USER\Desktop\clinical-ai-assessment\src\api\main.py", line 104, in lifespan
+    _predictor = ClinicalNERPredictor(model_save_dir=str(config.MODEL_SAVE_DIR))
+                 │                                       │      └ WindowsPath('C:/Users/USER/Desktop/clinical-ai-assessment/models/ner_model')
+                 │                                       └ <module 'src.config' from 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\src\\config.py'>
+                 └ <class 'src.modeling.predictor.ClinicalNERPredictor'>
+
+TypeError: ClinicalNERPredictor.__init__() got an unexpected keyword argument 'model_save_dir'
+2026-08-31 23:43:08 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:43:08 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:43:08 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:43:08 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:43:08 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:43:08 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:43:08 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:43:08 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:43:10 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:43:10 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:43:10 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:43:10 | ERROR    | src.api.main:lifespan:116 - ✗ Failed to load guideline evaluator: 'str' object has no attribute 'exists'
+2026-08-31 23:43:10 | ERROR    | src.api.main:lifespan:117 - 'str' object has no attribute 'exists'
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 280
+               │     └ 3
+               └ <function _main at 0x00000263A86A1C70>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 280
+           │    └ <function BaseProcess._bootstrap at 0x00000263A856BE20>
+           └ <SpawnProcess name='SpawnProcess-2' parent=7144 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x00000263A856B1C0>
+    └ <SpawnProcess name='SpawnProcess-2' parent=7144 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x00000263AA8F1550>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-2' parent=7144 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-2' parent=7144 started>
+    │    └ <function subprocess_started at 0x00000263AA9ACD50>
+    └ <SpawnProcess name='SpawnProcess-2' parent=7144 started>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=516, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x00000263AA8F16A0>>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\server.py", line 77, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x00000263AA776A30>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x00000263AA8F1550>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x00000263AA8F16A0>
+           │           │    │             └ [<socket.socket fd=516, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+           │           │    └ <function Server.serve at 0x00000263AA9880F0>
+           │           └ <uvicorn.server.Server object at 0x00000263AA8F16A0>
+           └ <function run at 0x00000263AA520B40>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x00000263AA9BC7C0>
+           │      └ <function Runner.run at 0x00000263AA520F60>
+           └ <asyncio.runners.Runner object at 0x00000263AA8F2510>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packag...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000263AA505380>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000263AA8F2510>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000263AA5052D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000263AA5073D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000263A8CE3A00>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000263CBD368F0>()>
+  File "C:\Program Files\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000263CBD368F0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000263CBD368F0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x00000263CBD368F0>()>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in main
+    await app(scope, self.receive, self.send)
+          │   │      │    │        │    └ <function LifespanOn.send at 0x00000263AB274F60>
+          │   │      │    │        └ <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>
+          │   │      │    └ <function LifespanOn.receive at 0x00000263AB2750C0>
+          │   │      └ <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>
+          │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000263CE0F7230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 30, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+                 │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+                 │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+                 │    └ <fastapi.applications.FastAPI object at 0x00000263CDFA5E80>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000263CE0F7230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+                           │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+                           └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000263CE0F7CB0>
+          └ <fastapi.applications.FastAPI object at 0x00000263CDFA5E80>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\errors.py", line 151, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x00000263CE0F7B60>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000263CE0F7CB0>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 49, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x00000263CE0F7A10>
+          └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x00000263CE0F7B60>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.routing.APIRouter object at 0x00000263CDF9B610>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x00000263CE0F7A10>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <bound method APIRouter.app of <fastapi.routing.APIRouter object at 0x00000263CDF9B610>>
+          └ <fastapi.routing.APIRouter object at 0x00000263CDF9B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 2726, in app
+    await self.lifespan(scope, receive, send)
+          │    │        │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │        │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x00000263B7AA5160>>
+          │    │        └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <function Router.lifespan at 0x00000263ABB9BAB0>
+          └ <fastapi.routing.APIRouter object at 0x00000263CDF9B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               │    │                └ <fastapi.applications.FastAPI object at 0x00000263CDFA5E80>
+               │    └ <function _merge_lifespan_context.<locals>.merged_lifespan at 0x00000263CE0662A0>
+               └ <fastapi.routing.APIRouter object at 0x00000263CDF9B610>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object _merge_lifespan_context.<locals>.merged_lifespan at 0x00000263CE13F9A0>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x00000263CE0F7E00>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               │                └ <fastapi.applications.FastAPI object at 0x00000263CDFA5E80>
+               └ <function lifespan at 0x00000263CE0654E0>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object lifespan at 0x00000263CE152020>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x00000263CE181810>
+
+> File "C:\Users\USER\Desktop\clinical-ai-assessment\src\api\main.py", line 113, in lifespan
+    _evaluator = GuidelineEvaluator(guidelines_path=str(config.GUIDELINES_PATH))
+                 │                                      │      └ WindowsPath('C:/Users/USER/Desktop/clinical-ai-assessment/data/raw/guidelines.json')
+                 │                                      └ <module 'src.config' from 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\src\\config.py'>
+                 └ <class 'src.guideline_engine.evaluator.GuidelineEvaluator'>
+
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\src\guideline_engine\evaluator.py", line 37, in __init__
+    if not guidelines_path.exists():
+           └ 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\data\\raw\\guidelines.json'
+
+AttributeError: 'str' object has no attribute 'exists'
+2026-08-31 23:43:10 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:43:10 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:43:10 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:43:10 | ERROR    | src.api.main:lifespan:116 - ✗ Failed to load guideline evaluator: 'str' object has no attribute 'exists'
+2026-08-31 23:43:10 | ERROR    | src.api.main:lifespan:117 - 'str' object has no attribute 'exists'
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 276
+               │     └ 3
+               └ <function _main at 0x000001F6DFAF1C70>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 276
+           │    └ <function BaseProcess._bootstrap at 0x000001F6DF9BBE20>
+           └ <SpawnProcess name='SpawnProcess-3' parent=4612 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001F6DF9BB1C0>
+    └ <SpawnProcess name='SpawnProcess-3' parent=4612 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001F6E1D71550>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-3' parent=4612 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-3' parent=4612 started>
+    │    └ <function subprocess_started at 0x000001F6E1E2CD50>
+    └ <SpawnProcess name='SpawnProcess-3' parent=4612 started>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=532, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001F6E1D716A0>>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\server.py", line 77, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000001F6E1BE6A30>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000001F6E1D71550>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000001F6E1D716A0>
+           │           │    │             └ [<socket.socket fd=532, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+           │           │    └ <function Server.serve at 0x000001F6E1E080F0>
+           │           └ <uvicorn.server.Server object at 0x000001F6E1D716A0>
+           └ <function run at 0x000001F6E1970B40>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001F6E1E3C7C0>
+           │      └ <function Runner.run at 0x000001F6E1970F60>
+           └ <asyncio.runners.Runner object at 0x000001F6E1D72510>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packag...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001F6E1955380>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001F6E1D72510>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001F6E19552D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001F6E19573D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001F6DFD33A00>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001F6E1D7F100>()>
+  File "C:\Program Files\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001F6E1D7F100>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001F6E1D7F100>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x000001F6E1D7F100>()>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in main
+    await app(scope, self.receive, self.send)
+          │   │      │    │        │    └ <function LifespanOn.send at 0x000001F6E1EF4F60>
+          │   │      │    │        └ <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>
+          │   │      │    └ <function LifespanOn.receive at 0x000001F6E1EF50C0>
+          │   │      └ <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>
+          │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001F685567230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 30, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+                 │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+                 │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001F685415E80>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001F685567230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+                           │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+                           └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001F685567CB0>
+          └ <fastapi.applications.FastAPI object at 0x000001F685415E80>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\errors.py", line 151, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001F685567B60>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001F685567CB0>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 49, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001F685567A10>
+          └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001F685567B60>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.routing.APIRouter object at 0x000001F68540B610>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001F685567A10>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <bound method APIRouter.app of <fastapi.routing.APIRouter object at 0x000001F68540B610>>
+          └ <fastapi.routing.APIRouter object at 0x000001F68540B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 2726, in app
+    await self.lifespan(scope, receive, send)
+          │    │        │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │        │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x000001F6EEED5160>>
+          │    │        └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <function Router.lifespan at 0x000001F6E301BAB0>
+          └ <fastapi.routing.APIRouter object at 0x000001F68540B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               │    │                └ <fastapi.applications.FastAPI object at 0x000001F685415E80>
+               │    └ <function _merge_lifespan_context.<locals>.merged_lifespan at 0x000001F6854DA2A0>
+               └ <fastapi.routing.APIRouter object at 0x000001F68540B610>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object _merge_lifespan_context.<locals>.merged_lifespan at 0x000001F6855AF9A0>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x000001F685567E00>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               │                └ <fastapi.applications.FastAPI object at 0x000001F685415E80>
+               └ <function lifespan at 0x000001F6854D94E0>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object lifespan at 0x000001F6855C2200>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x000001F6855F1810>
+
+> File "C:\Users\USER\Desktop\clinical-ai-assessment\src\api\main.py", line 113, in lifespan
+    _evaluator = GuidelineEvaluator(guidelines_path=str(config.GUIDELINES_PATH))
+                 │                                      │      └ WindowsPath('C:/Users/USER/Desktop/clinical-ai-assessment/data/raw/guidelines.json')
+                 │                                      └ <module 'src.config' from 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\src\\config.py'>
+                 └ <class 'src.guideline_engine.evaluator.GuidelineEvaluator'>
+
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\src\guideline_engine\evaluator.py", line 37, in __init__
+    if not guidelines_path.exists():
+           └ 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\data\\raw\\guidelines.json'
+
+AttributeError: 'str' object has no attribute 'exists'
+2026-08-31 23:44:08 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:44:08 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:44:08 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:44:08 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:44:10 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:44:10 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:44:10 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:44:10 | ERROR    | src.api.main:lifespan:116 - ✗ Failed to load guideline evaluator: 'str' object has no attribute 'exists'
+2026-08-31 23:44:10 | ERROR    | src.api.main:lifespan:117 - 'str' object has no attribute 'exists'
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 268
+               │     └ 3
+               └ <function _main at 0x0000027FA89A1C70>
+  File "C:\Program Files\Python314\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 268
+           │    └ <function BaseProcess._bootstrap at 0x0000027FA883BE20>
+           └ <SpawnProcess name='SpawnProcess-1' parent=5100 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x0000027FA883B1C0>
+    └ <SpawnProcess name='SpawnProcess-1' parent=5100 started>
+  File "C:\Program Files\Python314\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x0000027FAAC91550>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=5100 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=5100 started>
+    │    └ <function subprocess_started at 0x0000027FAAD4CD50>
+    └ <SpawnProcess name='SpawnProcess-1' parent=5100 started>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=292, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x0000027FAAC916A0>>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\server.py", line 77, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x0000027FAAB06A30>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x0000027FAAC91550>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x0000027FAAC916A0>
+           │           │    │             └ [<socket.socket fd=292, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+           │           │    └ <function Server.serve at 0x0000027FAAD280F0>
+           │           └ <uvicorn.server.Server object at 0x0000027FAAC916A0>
+           └ <function run at 0x0000027FAA850B40>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x0000027FAAD5C7C0>
+           │      └ <function Runner.run at 0x0000027FAA850F60>
+           └ <asyncio.runners.Runner object at 0x0000027FAAC92510>
+  File "C:\Program Files\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packag...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000027FAA835380>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000027FAAC92510>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x0000027FAA8352D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000027FAA8373D0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python314\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000027FA8FE3A00>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000027FCE3BD870>()>
+  File "C:\Program Files\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000027FCE3BD870>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000027FCE3BD870>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000027FCE3BD870>()>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in main
+    await app(scope, self.receive, self.send)
+          │   │      │    │        │    └ <function LifespanOn.send at 0x0000027FAB614F60>
+          │   │      │    │        └ <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>
+          │   │      │    └ <function LifespanOn.receive at 0x0000027FAB6150C0>
+          │   │      └ <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>
+          │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000027FCE467230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 30, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+                 │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+                 │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000027FCE315E80>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000027FCE467230>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+                           │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+                           └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000027FCE467CB0>
+          └ <fastapi.applications.FastAPI object at 0x0000027FCE315E80>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\errors.py", line 151, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000027FCE467B60>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000027FCE467CB0>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 49, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000027FCE467A10>
+          └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000027FCE467B60>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │   │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │   └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <fastapi.routing.APIRouter object at 0x0000027FCE30B610>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000027FCE467A10>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │                │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │                └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <bound method APIRouter.app of <fastapi.routing.APIRouter object at 0x0000027FCE30B610>>
+          └ <fastapi.routing.APIRouter object at 0x0000027FCE30B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 2726, in app
+    await self.lifespan(scope, receive, send)
+          │    │        │      │        └ <bound method LifespanOn.send of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │        │      └ <bound method LifespanOn.receive of <uvicorn.lifespan.on.LifespanOn object at 0x0000027FB7DE5160>>
+          │    │        └ {'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}, 'app': <fastapi.applications.FastAPI obj...
+          │    └ <function Router.lifespan at 0x0000027FABF3BAB0>
+          └ <fastapi.routing.APIRouter object at 0x0000027FCE30B610>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               │    │                └ <fastapi.applications.FastAPI object at 0x0000027FCE315E80>
+               │    └ <function _merge_lifespan_context.<locals>.merged_lifespan at 0x0000027FCE3DA2A0>
+               └ <fastapi.routing.APIRouter object at 0x0000027FCE30B610>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object _merge_lifespan_context.<locals>.merged_lifespan at 0x0000027FCE4AF9A0>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x0000027FCE467E00>
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               │                └ <fastapi.applications.FastAPI object at 0x0000027FCE315E80>
+               └ <function lifespan at 0x0000027FCE3D94E0>
+  File "C:\Program Files\Python314\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+                       │    └ <async_generator object lifespan at 0x0000027FCE4C2020>
+                       └ <contextlib._AsyncGeneratorContextManager object at 0x0000027FCE4F1810>
+
+> File "C:\Users\USER\Desktop\clinical-ai-assessment\src\api\main.py", line 113, in lifespan
+    _evaluator = GuidelineEvaluator(guidelines_path=str(config.GUIDELINES_PATH))
+                 │                                      │      └ WindowsPath('C:/Users/USER/Desktop/clinical-ai-assessment/data/raw/guidelines.json')
+                 │                                      └ <module 'src.config' from 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\src\\config.py'>
+                 └ <class 'src.guideline_engine.evaluator.GuidelineEvaluator'>
+
+  File "C:\Users\USER\Desktop\clinical-ai-assessment\src\guideline_engine\evaluator.py", line 37, in __init__
+    if not guidelines_path.exists():
+           └ 'C:\\Users\\USER\\Desktop\\clinical-ai-assessment\\data\\raw\\guidelines.json'
+
+AttributeError: 'str' object has no attribute 'exists'
+2026-08-31 23:46:42 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:46:42 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:46:42 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:46:42 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:46:45 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:46:45 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:46:45 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:46:45 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:46:46 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:46:46 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:46:46 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:46:46 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:46:47 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:46:47 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:46:49 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:46:49 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:46:49 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:46:49 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:46:50 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:46:50 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:46:50 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:46:50 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:46:53 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:46:53 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:46:53 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:46:55 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:46:55 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:46:55 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:46:55 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:46:55 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:46:55 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:46:55 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:46:56 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:46:56 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:46:56 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:47:09 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:47:09 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:47:09 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:47:09 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:47:12 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:47:13 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:47:13 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:48:05 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note N001
+2026-08-31 23:48:11 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-08-31 23:48:11 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-08-31 23:48:11 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 6441.55ms using hybrid extraction
+2026-08-31 23:48:11 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note N001
+2026-08-31 23:48:11 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note N001
+2026-08-31 23:48:11 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-08-31 23:48:11 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-08-31 23:48:11 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=N001 | latency=6526ms | status=PARTIAL_COMPLIANCE
+2026-08-31 23:49:55 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:49:55 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:49:55 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:49:55 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:51:18 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:51:18 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:51:18 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:51:19 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:51:24 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:51:24 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:51:24 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:51:25 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:51:25 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:51:25 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:51:25 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:51:25 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:51:25 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:51:25 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:52:19 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:52:19 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:52:19 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:52:19 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:52:19 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:52:19 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:52:19 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:52:19 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:52:20 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:52:20 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:52:20 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:52:20 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:52:25 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:52:25 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:52:25 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:52:25 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:52:25 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:52:25 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:52:26 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:52:26 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:52:26 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:52:26 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note N001
+2026-08-31 23:52:27 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:52:27 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:52:27 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:52:27 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:52:27 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:52:27 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:52:28 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:52:28 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:52:28 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:52:28 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:52:32 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-08-31 23:52:32 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-08-31 23:52:32 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 5644.42ms using hybrid extraction
+2026-08-31 23:52:32 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note N001
+2026-08-31 23:52:32 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note N001
+2026-08-31 23:52:32 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-08-31 23:52:32 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-08-31 23:52:32 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=N001 | latency=5705ms | status=PARTIAL_COMPLIANCE
+2026-08-31 23:54:59 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:54:59 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:55:00 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:55:00 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-08-31 23:56:14 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:56:14 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:56:14 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:56:14 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:56:21 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:56:21 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:56:22 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:56:22 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:56:22 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:56:22 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:56:23 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:56:23 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:56:23 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:56:23 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:57:34 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:57:34 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:57:34 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:57:34 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:57:37 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:57:37 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:57:37 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:57:37 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:57:38 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-08-31 23:57:38 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:57:38 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-08-31 23:57:38 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-08-31 23:57:43 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:57:43 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:57:43 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:57:43 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:57:44 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:57:44 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:57:44 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:57:44 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:57:44 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:57:44 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:57:46 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:57:46 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:57:46 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-08-31 23:57:47 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-08-31 23:57:47 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-08-31 23:57:47 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:34 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:34 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:34 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:34 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:36 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:36 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:36 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:36 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:36 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:37 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:37 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:37 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:37 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:37 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:38 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:38 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:38 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:38 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:38 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:38 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:38 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:38 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:39 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:39 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:39 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:05:44 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:05:44 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:05:44 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 5732.61ms using hybrid extraction
+2026-09-01 00:05:44 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:05:44 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:05:44 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:05:44 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:05:44 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=5740ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:05:44 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:44 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:44 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:44 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:44 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:45 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:45 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:45 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:45 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:05:46 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:05:46 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:05:46 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 782.06ms using hybrid extraction
+2026-09-01 00:05:46 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:05:46 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:05:46 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:05:46 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:05:46 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=785ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:05:46 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:46 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:46 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:46 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:46 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:47 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:47 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:47 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:47 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:05:48 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:05:48 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:05:48 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 1142.25ms using hybrid extraction
+2026-09-01 00:05:48 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:05:48 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:05:48 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:05:48 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:05:48 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=1146ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:05:48 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:48 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:48 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:48 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:48 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:49 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:49 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:49 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:49 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:05:50 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:05:50 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:05:50 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 1280.95ms using hybrid extraction
+2026-09-01 00:05:50 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:05:50 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:05:50 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:05:50 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:05:50 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=1283ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:05:50 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:50 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:50 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:50 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:50 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:51 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:51 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:51 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:51 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:51 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:52 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:52 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:52 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:52 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST002
+2026-09-01 00:05:54 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:05:54 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='urinary tract infection'
+2026-09-01 00:05:54 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 2011.95ms using hybrid extraction
+2026-09-01 00:05:54 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST002
+2026-09-01 00:05:54 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST002
+2026-09-01 00:05:54 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:05:54 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: NON_COMPLIANT
+2026-09-01 00:05:54 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST002 | latency=2014ms | status=NON_COMPLIANT
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:54 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:05:54 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:05:54 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:05:54 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:05:54 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:08:59 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:08:59 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:08:59 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:01 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:01 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:01 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:01 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:05 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:05 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:05 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:32 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:33 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:33 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:33 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:33 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:33 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:33 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:33 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:36 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:36 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:36 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:36 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:36 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:41 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:41 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:41 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:41 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:43 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:43 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:43 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:43 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:43 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:44 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:44 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:44 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:44 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:44 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:44 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:44 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:44 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:10:48 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:10:48 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:10:48 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 4058.63ms using hybrid extraction
+2026-09-01 00:10:48 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:10:48 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:10:48 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:10:48 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:10:48 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=4062ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:10:48 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:48 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:48 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:48 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:48 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:49 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:49 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:49 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:49 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:10:50 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:10:50 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:10:50 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 671.62ms using hybrid extraction
+2026-09-01 00:10:50 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:10:50 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:10:50 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:10:50 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:10:50 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=676ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:50 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:50 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:50 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:50 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:50 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:50 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:10:51 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:10:51 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:10:51 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 319.01ms using hybrid extraction
+2026-09-01 00:10:51 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:10:51 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:10:51 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:10:51 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:10:51 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=322ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:51 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:51 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:51 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:51 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:51 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:51 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST001
+2026-09-01 00:10:52 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:10:52 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='pneumonia'
+2026-09-01 00:10:52 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 888.29ms using hybrid extraction
+2026-09-01 00:10:52 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST001
+2026-09-01 00:10:52 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST001
+2026-09-01 00:10:52 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:10:52 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: PARTIAL_COMPLIANCE
+2026-09-01 00:10:52 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST001 | latency=890ms | status=PARTIAL_COMPLIANCE
+2026-09-01 00:10:52 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:52 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:52 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:52 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:52 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:53 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:53 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:53 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:53 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:53 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:53 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:53 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:53 | INFO     | src.api.routes:predict:113 - 🔍 Extracting entities from note TEST002
+2026-09-01 00:10:54 | WARNING  | src.modeling.predictor:predict:217 - Model failed to extract diagnosis. Activating hybrid fallback with rule-based annotation.
+2026-09-01 00:10:54 | INFO     | src.modeling.predictor:predict:241 - Hybrid fallback: extracted diagnosis='urinary tract infection'
+2026-09-01 00:10:54 | INFO     | src.modeling.predictor:predict:262 - Prediction completed in 670.07ms using hybrid extraction
+2026-09-01 00:10:54 | INFO     | src.api.routes:predict:118 - 📋 Evaluating guideline compliance for note TEST002
+2026-09-01 00:10:54 | INFO     | src.api.routes:predict:122 - 💡 Generating explanations for note TEST002
+2026-09-01 00:10:54 | INFO     | src.explainability.explainer:explain:60 - Generating comprehensive clinical explanations
+2026-09-01 00:10:54 | INFO     | src.explainability.explainer:explain:90 - Explanations generated. Compliance: NON_COMPLIANT
+2026-09-01 00:10:54 | INFO     | src.api.routes:predict:152 - ✓ Prediction complete | note_id=TEST002 | latency=672ms | status=NON_COMPLIANT
+2026-09-01 00:10:54 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 00:10:54 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 00:10:54 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:54 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 00:10:54 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 00:10:55 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 00:10:55 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 00:10:55 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 04:43:52 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 04:43:52 | INFO     | src.api.main:lifespan:139 - 🛑 Clinical AI Assessment API shutting down...
+2026-09-01 04:45:58 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 04:45:58 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 04:45:58 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 04:45:58 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 04:46:00 | INFO     | src.api.main:lifespan:100 - 🚀 Clinical AI Assessment API starting up...
+2026-09-01 04:46:00 | INFO     | src.api.main:lifespan:103 - 📦 Loading NER predictor from C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 04:46:00 | INFO     | src.modeling.predictor:__init__:60 - Loading BioBERT model from: C:\Users\USER\Desktop\clinical-ai-assessment\models\ner_model
+2026-09-01 04:46:00 | INFO     | src.modeling.predictor:__init__:61 - Using device: cpu
+2026-09-01 04:46:01 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 04:46:01 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 04:46:01 | INFO     | src.api.main:lifespan:132 - ================================================================================
+2026-09-01 04:46:02 | INFO     | src.modeling.predictor:__init__:80 - Model loaded successfully. Version: None
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:105 - ✓ NER predictor loaded successfully (version 1.0.0)
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:112 - 📋 Loading guideline evaluator from C:\Users\USER\Desktop\clinical-ai-assessment\data\raw\guidelines.json
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:114 - ✓ Guideline evaluator loaded successfully (version 1.0.0)
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:121 - 💡 Loading explainability module
+2026-09-01 04:46:02 | INFO     | src.explainability.explainer:__init__:29 - ClinicalExplainer initialized
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:123 - ✓ Explainability module loaded successfully
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:130 - ================================================================================
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:131 - ✓ All components loaded. API ready for predictions.
+2026-09-01 04:46:02 | INFO     | src.api.main:lifespan:132 - ================================================================================

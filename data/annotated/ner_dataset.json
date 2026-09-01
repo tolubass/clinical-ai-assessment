@@ -1,0 +1,2640 @@
+[
+  {
+    "note_id": "N001",
+    "text": "45 year old male with fever and productive cough for five days. Diagnosed with pneumonia. Started on amoxicillin.",
+    "tokens": [
+      "45",
+      "year",
+      "old",
+      "male",
+      "with",
+      "fever",
+      "and",
+      "productive",
+      "cough",
+      "for",
+      "five",
+      "days",
+      ".",
+      "Diagnosed",
+      "with",
+      "pneumonia",
+      ".",
+      "Started",
+      "on",
+      "amoxicillin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "45 year old",
+      "sex": "male",
+      "symptoms": [
+        "fever",
+        "productive cough"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "amoxicillin"
+      ]
+    }
+  },
+  {
+    "note_id": "N002",
+    "text": "30 year old female presenting with headache, neck stiffness and fever. Impression meningitis. Given ceftriaxone.",
+    "tokens": [
+      "30",
+      "year",
+      "old",
+      "female",
+      "presenting",
+      "with",
+      "headache",
+      ",",
+      "neck",
+      "stiffness",
+      "and",
+      "fever",
+      ".",
+      "Impression",
+      "meningitis",
+      ".",
+      "Given",
+      "ceftriaxone",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "30 year old",
+      "sex": "female",
+      "symptoms": [
+        "headache",
+        "neck stiffness",
+        "fever"
+      ],
+      "diagnosis": "meningitis",
+      "medications": [
+        "ceftriaxone"
+      ]
+    }
+  },
+  {
+    "note_id": "N003",
+    "text": "60 year old male with chest pain radiating to left arm. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+    "tokens": [
+      "60",
+      "year",
+      "old",
+      "male",
+      "with",
+      "chest",
+      "pain",
+      "radiating",
+      "to",
+      "left",
+      "arm",
+      ".",
+      "Diagnosed",
+      "myocardial",
+      "infarction",
+      ".",
+      "Started",
+      "aspirin",
+      "and",
+      "atorvastatin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "60 year old",
+      "sex": "male",
+      "symptoms": [
+        "chest pain",
+        "radiating to left arm"
+      ],
+      "diagnosis": "myocardial infarction",
+      "medications": [
+        "aspirin",
+        "atorvastatin"
+      ]
+    }
+  },
+  {
+    "note_id": "N004",
+    "text": "25 year old female with dysuria and lower abdominal pain. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+    "tokens": [
+      "25",
+      "year",
+      "old",
+      "female",
+      "with",
+      "dysuria",
+      "and",
+      "lower",
+      "abdominal",
+      "pain",
+      ".",
+      "Diagnosed",
+      "urinary",
+      "tract",
+      "infection",
+      ".",
+      "Prescribed",
+      "ciprofloxacin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "25 year old",
+      "sex": "female",
+      "symptoms": [
+        "dysuria",
+        "lower abdominal pain"
+      ],
+      "diagnosis": "urinary tract infection",
+      "medications": [
+        "ciprofloxacin"
+      ]
+    }
+  },
+  {
+    "note_id": "N005",
+    "text": "50 year old male with cough, weight loss and night sweats. Suspected tuberculosis. Started rifampicin and isoniazid.",
+    "tokens": [
+      "50",
+      "year",
+      "old",
+      "male",
+      "with",
+      "cough",
+      ",",
+      "weight",
+      "loss",
+      "and",
+      "night",
+      "sweats",
+      ".",
+      "Suspected",
+      "tuberculosis",
+      ".",
+      "Started",
+      "rifampicin",
+      "and",
+      "isoniazid",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "50 year old",
+      "sex": "male",
+      "symptoms": [
+        "cough",
+        "weight loss",
+        "night sweats"
+      ],
+      "diagnosis": "tuberculosis",
+      "medications": [
+        "rifampicin",
+        "isoniazid"
+      ]
+    }
+  },
+  {
+    "note_id": "N006",
+    "text": "70 year old female with shortness of breath and wheezing. Diagnosed asthma exacerbation. Given salbutamol nebulization.",
+    "tokens": [
+      "70",
+      "year",
+      "old",
+      "female",
+      "with",
+      "shortness",
+      "of",
+      "breath",
+      "and",
+      "wheezing",
+      ".",
+      "Diagnosed",
+      "asthma",
+      "exacerbation",
+      ".",
+      "Given",
+      "salbutamol",
+      "nebulization",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "O"
+    ],
+    "extracted": {
+      "age": "70 year old",
+      "sex": "female",
+      "symptoms": [
+        "shortness of breath",
+        "wheezing"
+      ],
+      "diagnosis": "asthma exacerbation",
+      "medications": [
+        "salbutamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N007",
+    "text": "5 year old male with fever, vomiting and diarrhea. Diagnosed gastroenteritis. Started ORS.",
+    "tokens": [
+      "5",
+      "year",
+      "old",
+      "male",
+      "with",
+      "fever",
+      ",",
+      "vomiting",
+      "and",
+      "diarrhea",
+      ".",
+      "Diagnosed",
+      "gastroenteritis",
+      ".",
+      "Started",
+      "ORS",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "5 year old",
+      "sex": "male",
+      "symptoms": [
+        "fever",
+        "vomiting",
+        "diarrhea"
+      ],
+      "diagnosis": "gastroenteritis",
+      "medications": [
+        "ors"
+      ]
+    }
+  },
+  {
+    "note_id": "N008",
+    "text": "35 year old female with sore throat and fever. Diagnosed tonsillitis. Started azithromycin.",
+    "tokens": [
+      "35",
+      "year",
+      "old",
+      "female",
+      "with",
+      "sore",
+      "throat",
+      "and",
+      "fever",
+      ".",
+      "Diagnosed",
+      "tonsillitis",
+      ".",
+      "Started",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "35 year old",
+      "sex": "female",
+      "symptoms": [
+        "sore throat",
+        "fever"
+      ],
+      "diagnosis": "tonsillitis",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N009",
+    "text": "55 year old male with polyuria and polydipsia. Diagnosed diabetes mellitus. Started metformin.",
+    "tokens": [
+      "55",
+      "year",
+      "old",
+      "male",
+      "with",
+      "polyuria",
+      "and",
+      "polydipsia",
+      ".",
+      "Diagnosed",
+      "diabetes",
+      "mellitus",
+      ".",
+      "Started",
+      "metformin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "55 year old",
+      "sex": "male",
+      "symptoms": [
+        "polyuria",
+        "polydipsia"
+      ],
+      "diagnosis": "diabetes mellitus",
+      "medications": [
+        "metformin"
+      ]
+    }
+  },
+  {
+    "note_id": "N010",
+    "text": "40 year old female with severe headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+    "tokens": [
+      "40",
+      "year",
+      "old",
+      "female",
+      "with",
+      "severe",
+      "headache",
+      "and",
+      "blurred",
+      "vision",
+      ".",
+      "Diagnosed",
+      "migraine",
+      ".",
+      "Given",
+      "paracetamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "40 year old",
+      "sex": "female",
+      "symptoms": [
+        "severe headache",
+        "blurred vision"
+      ],
+      "diagnosis": "migraine",
+      "medications": [
+        "paracetamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N011",
+    "text": "28 year old male with fever and cough. Chest exam suggest pneumonia. Started azithromycin.",
+    "tokens": [
+      "28",
+      "year",
+      "old",
+      "male",
+      "with",
+      "fever",
+      "and",
+      "cough",
+      ".",
+      "Chest",
+      "exam",
+      "suggest",
+      "pneumonia",
+      ".",
+      "Started",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "28 year old",
+      "sex": "male",
+      "symptoms": [
+        "fever",
+        "cough"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N012",
+    "text": "62 year old female with chest tightness and shortness of breath. Diagnosed myocardial infarction. Given aspirin.",
+    "tokens": [
+      "62",
+      "year",
+      "old",
+      "female",
+      "with",
+      "chest",
+      "tightness",
+      "and",
+      "shortness",
+      "of",
+      "breath",
+      ".",
+      "Diagnosed",
+      "myocardial",
+      "infarction",
+      ".",
+      "Given",
+      "aspirin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "62 year old",
+      "sex": "female",
+      "symptoms": [
+        "chest tightness",
+        "shortness of breath"
+      ],
+      "diagnosis": "myocardial infarction",
+      "medications": [
+        "aspirin"
+      ]
+    }
+  },
+  {
+    "note_id": "N013",
+    "text": "22 year old female with burning urination. Diagnosed urinary tract infection. Given nitrofurantoin.",
+    "tokens": [
+      "22",
+      "year",
+      "old",
+      "female",
+      "with",
+      "burning",
+      "urination",
+      ".",
+      "Diagnosed",
+      "urinary",
+      "tract",
+      "infection",
+      ".",
+      "Given",
+      "nitrofurantoin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "22 year old",
+      "sex": "female",
+      "symptoms": [
+        "burning urination"
+      ],
+      "diagnosis": "urinary tract infection",
+      "medications": [
+        "nitrofurantoin"
+      ]
+    }
+  },
+  {
+    "note_id": "N014",
+    "text": "48 year old male with night sweats and chronic cough. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+    "tokens": [
+      "48",
+      "year",
+      "old",
+      "male",
+      "with",
+      "night",
+      "sweats",
+      "and",
+      "chronic",
+      "cough",
+      ".",
+      "Diagnosed",
+      "tuberculosis",
+      ".",
+      "Started",
+      "rifampicin",
+      ",",
+      "isoniazid",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "O",
+      "O"
+    ],
+    "extracted": {
+      "age": "48 year old",
+      "sex": "male",
+      "symptoms": [
+        "night sweats",
+        "chronic cough"
+      ],
+      "diagnosis": "tuberculosis",
+      "medications": [
+        "rifampicin"
+      ]
+    }
+  },
+  {
+    "note_id": "N015",
+    "text": "10 year old male with vomiting and diarrhea. Diagnosed gastroenteritis. Given ORS.",
+    "tokens": [
+      "10",
+      "year",
+      "old",
+      "male",
+      "with",
+      "vomiting",
+      "and",
+      "diarrhea",
+      ".",
+      "Diagnosed",
+      "gastroenteritis",
+      ".",
+      "Given",
+      "ORS",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "10 year old",
+      "sex": "male",
+      "symptoms": [
+        "vomiting",
+        "diarrhea"
+      ],
+      "diagnosis": "gastroenteritis",
+      "medications": [
+        "ors"
+      ]
+    }
+  },
+  {
+    "note_id": "N016",
+    "text": "33 year old female with wheezing and shortness of breath. Asthma exacerbation. Given salbutamol.",
+    "tokens": [
+      "33",
+      "year",
+      "old",
+      "female",
+      "with",
+      "wheezing",
+      "and",
+      "shortness",
+      "of",
+      "breath",
+      ".",
+      "Asthma",
+      "exacerbation",
+      ".",
+      "Given",
+      "salbutamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "33 year old",
+      "sex": "female",
+      "symptoms": [
+        "wheezing",
+        "shortness of breath"
+      ],
+      "diagnosis": null,
+      "medications": [
+        "salbutamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N017",
+    "text": "65 year old male with fever and headache. Suspected meningitis. Started ceftriaxone.",
+    "tokens": [
+      "65",
+      "year",
+      "old",
+      "male",
+      "with",
+      "fever",
+      "and",
+      "headache",
+      ".",
+      "Suspected",
+      "meningitis",
+      ".",
+      "Started",
+      "ceftriaxone",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "65 year old",
+      "sex": "male",
+      "symptoms": [
+        "fever",
+        "headache"
+      ],
+      "diagnosis": "meningitis",
+      "medications": [
+        "ceftriaxone"
+      ]
+    }
+  },
+  {
+    "note_id": "N018",
+    "text": "52 year old female with high blood sugar. Diagnosed diabetes mellitus. Started metformin.",
+    "tokens": [
+      "52",
+      "year",
+      "old",
+      "female",
+      "with",
+      "high",
+      "blood",
+      "sugar",
+      ".",
+      "Diagnosed",
+      "diabetes",
+      "mellitus",
+      ".",
+      "Started",
+      "metformin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "52 year old",
+      "sex": "female",
+      "symptoms": [],
+      "diagnosis": "diabetes mellitus",
+      "medications": [
+        "metformin"
+      ]
+    }
+  },
+  {
+    "note_id": "N019",
+    "text": "38 year old male with sore throat. Diagnosed tonsillitis. Started azithromycin.",
+    "tokens": [
+      "38",
+      "year",
+      "old",
+      "male",
+      "with",
+      "sore",
+      "throat",
+      ".",
+      "Diagnosed",
+      "tonsillitis",
+      ".",
+      "Started",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "38 year old",
+      "sex": "male",
+      "symptoms": [
+        "sore throat"
+      ],
+      "diagnosis": "tonsillitis",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N020",
+    "text": "44 year old female with cough and fever. Diagnosed pneumonia. Given amoxicillin.",
+    "tokens": [
+      "44",
+      "year",
+      "old",
+      "female",
+      "with",
+      "cough",
+      "and",
+      "fever",
+      ".",
+      "Diagnosed",
+      "pneumonia",
+      ".",
+      "Given",
+      "amoxicillin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "44 year old",
+      "sex": "female",
+      "symptoms": [
+        "cough",
+        "fever"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "amoxicillin"
+      ]
+    }
+  },
+  {
+    "note_id": "N021",
+    "text": "58 year old male with chest pain. ECG suggests myocardial infarction. Started aspirin and atorvastatin.",
+    "tokens": [
+      "58",
+      "year",
+      "old",
+      "male",
+      "with",
+      "chest",
+      "pain",
+      ".",
+      "ECG",
+      "suggests",
+      "myocardial",
+      "infarction",
+      ".",
+      "Started",
+      "aspirin",
+      "and",
+      "atorvastatin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "58 year old",
+      "sex": "male",
+      "symptoms": [
+        "chest pain"
+      ],
+      "diagnosis": "myocardial infarction",
+      "medications": [
+        "aspirin",
+        "atorvastatin"
+      ]
+    }
+  },
+  {
+    "note_id": "N022",
+    "text": "27 year old female with dysuria. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+    "tokens": [
+      "27",
+      "year",
+      "old",
+      "female",
+      "with",
+      "dysuria",
+      ".",
+      "Diagnosed",
+      "urinary",
+      "tract",
+      "infection",
+      ".",
+      "Prescribed",
+      "ciprofloxacin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "27 year old",
+      "sex": "female",
+      "symptoms": [
+        "dysuria"
+      ],
+      "diagnosis": "urinary tract infection",
+      "medications": [
+        "ciprofloxacin"
+      ]
+    }
+  },
+  {
+    "note_id": "N023",
+    "text": "6 year old female with diarrhea and vomiting. Diagnosed gastroenteritis. Started ORS.",
+    "tokens": [
+      "6",
+      "year",
+      "old",
+      "female",
+      "with",
+      "diarrhea",
+      "and",
+      "vomiting",
+      ".",
+      "Diagnosed",
+      "gastroenteritis",
+      ".",
+      "Started",
+      "ORS",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "6 year old",
+      "sex": "female",
+      "symptoms": [
+        "diarrhea",
+        "vomiting"
+      ],
+      "diagnosis": "gastroenteritis",
+      "medications": [
+        "ors"
+      ]
+    }
+  },
+  {
+    "note_id": "N024",
+    "text": "49 year old male with weight loss and night sweats. Diagnosed tuberculosis. Started rifampicin and isoniazid.",
+    "tokens": [
+      "49",
+      "year",
+      "old",
+      "male",
+      "with",
+      "weight",
+      "loss",
+      "and",
+      "night",
+      "sweats",
+      ".",
+      "Diagnosed",
+      "tuberculosis",
+      ".",
+      "Started",
+      "rifampicin",
+      "and",
+      "isoniazid",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "49 year old",
+      "sex": "male",
+      "symptoms": [
+        "weight loss",
+        "night sweats"
+      ],
+      "diagnosis": "tuberculosis",
+      "medications": [
+        "rifampicin",
+        "isoniazid"
+      ]
+    }
+  },
+  {
+    "note_id": "N025",
+    "text": "36 year old female with headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+    "tokens": [
+      "36",
+      "year",
+      "old",
+      "female",
+      "with",
+      "headache",
+      "and",
+      "blurred",
+      "vision",
+      ".",
+      "Diagnosed",
+      "migraine",
+      ".",
+      "Given",
+      "paracetamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "36 year old",
+      "sex": "female",
+      "symptoms": [
+        "headache",
+        "blurred vision"
+      ],
+      "diagnosis": "migraine",
+      "medications": [
+        "paracetamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N026",
+    "text": "71 year old male with wheezing. Asthma exacerbation. Given salbutamol.",
+    "tokens": [
+      "71",
+      "year",
+      "old",
+      "male",
+      "with",
+      "wheezing",
+      ".",
+      "Asthma",
+      "exacerbation",
+      ".",
+      "Given",
+      "salbutamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "71 year old",
+      "sex": "male",
+      "symptoms": [
+        "wheezing"
+      ],
+      "diagnosis": null,
+      "medications": [
+        "salbutamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N027",
+    "text": "29 year old male with fever and neck stiffness. Diagnosed meningitis. Started ceftriaxone.",
+    "tokens": [
+      "29",
+      "year",
+      "old",
+      "male",
+      "with",
+      "fever",
+      "and",
+      "neck",
+      "stiffness",
+      ".",
+      "Diagnosed",
+      "meningitis",
+      ".",
+      "Started",
+      "ceftriaxone",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "29 year old",
+      "sex": "male",
+      "symptoms": [
+        "fever",
+        "neck stiffness"
+      ],
+      "diagnosis": "meningitis",
+      "medications": [
+        "ceftriaxone"
+      ]
+    }
+  },
+  {
+    "note_id": "N028",
+    "text": "54 year old female with polyuria and fatigue. Diagnosed diabetes mellitus. Started metformin.",
+    "tokens": [
+      "54",
+      "year",
+      "old",
+      "female",
+      "with",
+      "polyuria",
+      "and",
+      "fatigue",
+      ".",
+      "Diagnosed",
+      "diabetes",
+      "mellitus",
+      ".",
+      "Started",
+      "metformin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "54 year old",
+      "sex": "female",
+      "symptoms": [
+        "polyuria",
+        "fatigue"
+      ],
+      "diagnosis": "diabetes mellitus",
+      "medications": [
+        "metformin"
+      ]
+    }
+  },
+  {
+    "note_id": "N029",
+    "text": "41 year old male with sore throat and fever. Diagnosed tonsillitis. Started azithromycin.",
+    "tokens": [
+      "41",
+      "year",
+      "old",
+      "male",
+      "with",
+      "sore",
+      "throat",
+      "and",
+      "fever",
+      ".",
+      "Diagnosed",
+      "tonsillitis",
+      ".",
+      "Started",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "41 year old",
+      "sex": "male",
+      "symptoms": [
+        "sore throat",
+        "fever"
+      ],
+      "diagnosis": "tonsillitis",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N030",
+    "text": "34 year old female with cough and chest pain. Diagnosed pneumonia. Started amoxicillin.",
+    "tokens": [
+      "34",
+      "year",
+      "old",
+      "female",
+      "with",
+      "cough",
+      "and",
+      "chest",
+      "pain",
+      ".",
+      "Diagnosed",
+      "pneumonia",
+      ".",
+      "Started",
+      "amoxicillin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "34 year old",
+      "sex": "female",
+      "symptoms": [
+        "cough",
+        "chest pain"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "amoxicillin"
+      ]
+    }
+  },
+  {
+    "note_id": "N031",
+    "text": "59 year old male with chest discomfort radiating to arm. Diagnosed myocardial infarction. Given aspirin.",
+    "tokens": [
+      "59",
+      "year",
+      "old",
+      "male",
+      "with",
+      "chest",
+      "discomfort",
+      "radiating",
+      "to",
+      "arm",
+      ".",
+      "Diagnosed",
+      "myocardial",
+      "infarction",
+      ".",
+      "Given",
+      "aspirin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "59 year old",
+      "sex": "male",
+      "symptoms": [
+        "chest discomfort",
+        "radiating to arm"
+      ],
+      "diagnosis": "myocardial infarction",
+      "medications": [
+        "aspirin"
+      ]
+    }
+  },
+  {
+    "note_id": "N032",
+    "text": "23 year old female with dysuria and frequency. Diagnosed urinary tract infection. Given nitrofurantoin.",
+    "tokens": [
+      "23",
+      "year",
+      "old",
+      "female",
+      "with",
+      "dysuria",
+      "and",
+      "frequency",
+      ".",
+      "Diagnosed",
+      "urinary",
+      "tract",
+      "infection",
+      ".",
+      "Given",
+      "nitrofurantoin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "23 year old",
+      "sex": "female",
+      "symptoms": [
+        "dysuria",
+        "frequency"
+      ],
+      "diagnosis": "urinary tract infection",
+      "medications": [
+        "nitrofurantoin"
+      ]
+    }
+  },
+  {
+    "note_id": "N033",
+    "text": "47 year old male with chronic cough and weight loss. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+    "tokens": [
+      "47",
+      "year",
+      "old",
+      "male",
+      "with",
+      "chronic",
+      "cough",
+      "and",
+      "weight",
+      "loss",
+      ".",
+      "Diagnosed",
+      "tuberculosis",
+      ".",
+      "Started",
+      "rifampicin",
+      ",",
+      "isoniazid",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "O",
+      "O"
+    ],
+    "extracted": {
+      "age": "47 year old",
+      "sex": "male",
+      "symptoms": [
+        "chronic cough",
+        "weight loss"
+      ],
+      "diagnosis": "tuberculosis",
+      "medications": [
+        "rifampicin"
+      ]
+    }
+  },
+  {
+    "note_id": "N034",
+    "text": "11 year old male with diarrhea and vomiting. Diagnosed gastroenteritis. Given ORS.",
+    "tokens": [
+      "11",
+      "year",
+      "old",
+      "male",
+      "with",
+      "diarrhea",
+      "and",
+      "vomiting",
+      ".",
+      "Diagnosed",
+      "gastroenteritis",
+      ".",
+      "Given",
+      "ORS",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "11 year old",
+      "sex": "male",
+      "symptoms": [
+        "diarrhea",
+        "vomiting"
+      ],
+      "diagnosis": "gastroenteritis",
+      "medications": [
+        "ors"
+      ]
+    }
+  },
+  {
+    "note_id": "N035",
+    "text": "68 year old female with shortness of breath and wheezing. Asthma exacerbation. Given salbutamol.",
+    "tokens": [
+      "68",
+      "year",
+      "old",
+      "female",
+      "with",
+      "shortness",
+      "of",
+      "breath",
+      "and",
+      "wheezing",
+      ".",
+      "Asthma",
+      "exacerbation",
+      ".",
+      "Given",
+      "salbutamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "68 year old",
+      "sex": "female",
+      "symptoms": [
+        "shortness of breath",
+        "wheezing"
+      ],
+      "diagnosis": null,
+      "medications": [
+        "salbutamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N036",
+    "text": "32 year old male with headache and fever. Suspected meningitis. Started ceftriaxone.",
+    "tokens": [
+      "32",
+      "year",
+      "old",
+      "male",
+      "with",
+      "headache",
+      "and",
+      "fever",
+      ".",
+      "Suspected",
+      "meningitis",
+      ".",
+      "Started",
+      "ceftriaxone",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "32 year old",
+      "sex": "male",
+      "symptoms": [
+        "headache",
+        "fever"
+      ],
+      "diagnosis": "meningitis",
+      "medications": [
+        "ceftriaxone"
+      ]
+    }
+  },
+  {
+    "note_id": "N037",
+    "text": "46 year old female with fever and cough. Diagnosed pneumonia. Given azithromycin.",
+    "tokens": [
+      "46",
+      "year",
+      "old",
+      "female",
+      "with",
+      "fever",
+      "and",
+      "cough",
+      ".",
+      "Diagnosed",
+      "pneumonia",
+      ".",
+      "Given",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "46 year old",
+      "sex": "female",
+      "symptoms": [
+        "fever",
+        "cough"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N038",
+    "text": "57 year old male with high blood sugar. Diagnosed diabetes mellitus. Started metformin.",
+    "tokens": [
+      "57",
+      "year",
+      "old",
+      "male",
+      "with",
+      "high",
+      "blood",
+      "sugar",
+      ".",
+      "Diagnosed",
+      "diabetes",
+      "mellitus",
+      ".",
+      "Started",
+      "metformin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "57 year old",
+      "sex": "male",
+      "symptoms": [],
+      "diagnosis": "diabetes mellitus",
+      "medications": [
+        "metformin"
+      ]
+    }
+  },
+  {
+    "note_id": "N039",
+    "text": "26 year old female with sore throat. Diagnosed tonsillitis. Given azithromycin.",
+    "tokens": [
+      "26",
+      "year",
+      "old",
+      "female",
+      "with",
+      "sore",
+      "throat",
+      ".",
+      "Diagnosed",
+      "tonsillitis",
+      ".",
+      "Given",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "26 year old",
+      "sex": "female",
+      "symptoms": [
+        "sore throat"
+      ],
+      "diagnosis": "tonsillitis",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N040",
+    "text": "39 year old male with severe headache. Diagnosed migraine. Given paracetamol.",
+    "tokens": [
+      "39",
+      "year",
+      "old",
+      "male",
+      "with",
+      "severe",
+      "headache",
+      ".",
+      "Diagnosed",
+      "migraine",
+      ".",
+      "Given",
+      "paracetamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "39 year old",
+      "sex": "male",
+      "symptoms": [
+        "severe headache"
+      ],
+      "diagnosis": "migraine",
+      "medications": [
+        "paracetamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N041",
+    "text": "61 year old female with chest pain. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+    "tokens": [
+      "61",
+      "year",
+      "old",
+      "female",
+      "with",
+      "chest",
+      "pain",
+      ".",
+      "Diagnosed",
+      "myocardial",
+      "infarction",
+      ".",
+      "Started",
+      "aspirin",
+      "and",
+      "atorvastatin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "61 year old",
+      "sex": "female",
+      "symptoms": [
+        "chest pain"
+      ],
+      "diagnosis": "myocardial infarction",
+      "medications": [
+        "aspirin",
+        "atorvastatin"
+      ]
+    }
+  },
+  {
+    "note_id": "N042",
+    "text": "21 year old male with dysuria. Diagnosed urinary tract infection. Given ciprofloxacin.",
+    "tokens": [
+      "21",
+      "year",
+      "old",
+      "male",
+      "with",
+      "dysuria",
+      ".",
+      "Diagnosed",
+      "urinary",
+      "tract",
+      "infection",
+      ".",
+      "Given",
+      "ciprofloxacin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "21 year old",
+      "sex": "male",
+      "symptoms": [
+        "dysuria"
+      ],
+      "diagnosis": "urinary tract infection",
+      "medications": [
+        "ciprofloxacin"
+      ]
+    }
+  },
+  {
+    "note_id": "N043",
+    "text": "8 year old female with vomiting and diarrhea. Diagnosed gastroenteritis. Started ORS.",
+    "tokens": [
+      "8",
+      "year",
+      "old",
+      "female",
+      "with",
+      "vomiting",
+      "and",
+      "diarrhea",
+      ".",
+      "Diagnosed",
+      "gastroenteritis",
+      ".",
+      "Started",
+      "ORS",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "8 year old",
+      "sex": "female",
+      "symptoms": [
+        "vomiting",
+        "diarrhea"
+      ],
+      "diagnosis": "gastroenteritis",
+      "medications": [
+        "ors"
+      ]
+    }
+  },
+  {
+    "note_id": "N044",
+    "text": "53 year old male with cough, fever. Diagnosed pneumonia. Given amoxicillin.",
+    "tokens": [
+      "53",
+      "year",
+      "old",
+      "male",
+      "with",
+      "cough",
+      ",",
+      "fever",
+      ".",
+      "Diagnosed",
+      "pneumonia",
+      ".",
+      "Given",
+      "amoxicillin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "53 year old",
+      "sex": "male",
+      "symptoms": [
+        "cough",
+        "fever"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "amoxicillin"
+      ]
+    }
+  },
+  {
+    "note_id": "N045",
+    "text": "35 year old female with headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+    "tokens": [
+      "35",
+      "year",
+      "old",
+      "female",
+      "with",
+      "headache",
+      "and",
+      "blurred",
+      "vision",
+      ".",
+      "Diagnosed",
+      "migraine",
+      ".",
+      "Given",
+      "paracetamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "35 year old",
+      "sex": "female",
+      "symptoms": [
+        "headache",
+        "blurred vision"
+      ],
+      "diagnosis": "migraine",
+      "medications": [
+        "paracetamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N046",
+    "text": "72 year old male with wheezing and breathlessness. Asthma exacerbation. Given salbutamol.",
+    "tokens": [
+      "72",
+      "year",
+      "old",
+      "male",
+      "with",
+      "wheezing",
+      "and",
+      "breathlessness",
+      ".",
+      "Asthma",
+      "exacerbation",
+      ".",
+      "Given",
+      "salbutamol",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "72 year old",
+      "sex": "male",
+      "symptoms": [
+        "wheezing",
+        "breathlessness"
+      ],
+      "diagnosis": null,
+      "medications": [
+        "salbutamol"
+      ]
+    }
+  },
+  {
+    "note_id": "N047",
+    "text": "24 year old female with fever and neck stiffness. Diagnosed meningitis. Started ceftriaxone.",
+    "tokens": [
+      "24",
+      "year",
+      "old",
+      "female",
+      "with",
+      "fever",
+      "and",
+      "neck",
+      "stiffness",
+      ".",
+      "Diagnosed",
+      "meningitis",
+      ".",
+      "Started",
+      "ceftriaxone",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "24 year old",
+      "sex": "female",
+      "symptoms": [
+        "fever",
+        "neck stiffness"
+      ],
+      "diagnosis": "meningitis",
+      "medications": [
+        "ceftriaxone"
+      ]
+    }
+  },
+  {
+    "note_id": "N048",
+    "text": "56 year old male with polyuria. Diagnosed diabetes mellitus. Started metformin.",
+    "tokens": [
+      "56",
+      "year",
+      "old",
+      "male",
+      "with",
+      "polyuria",
+      ".",
+      "Diagnosed",
+      "diabetes",
+      "mellitus",
+      ".",
+      "Started",
+      "metformin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "I-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "56 year old",
+      "sex": "male",
+      "symptoms": [
+        "polyuria"
+      ],
+      "diagnosis": "diabetes mellitus",
+      "medications": [
+        "metformin"
+      ]
+    }
+  },
+  {
+    "note_id": "N049",
+    "text": "31 year old male with sore throat and fever. Diagnosed tonsillitis. Given azithromycin.",
+    "tokens": [
+      "31",
+      "year",
+      "old",
+      "male",
+      "with",
+      "sore",
+      "throat",
+      "and",
+      "fever",
+      ".",
+      "Diagnosed",
+      "tonsillitis",
+      ".",
+      "Given",
+      "azithromycin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "I-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "31 year old",
+      "sex": "male",
+      "symptoms": [
+        "sore throat",
+        "fever"
+      ],
+      "diagnosis": "tonsillitis",
+      "medications": [
+        "azithromycin"
+      ]
+    }
+  },
+  {
+    "note_id": "N050",
+    "text": "42 year old female with cough and fever. Diagnosed pneumonia. Started amoxicillin.",
+    "tokens": [
+      "42",
+      "year",
+      "old",
+      "female",
+      "with",
+      "cough",
+      "and",
+      "fever",
+      ".",
+      "Diagnosed",
+      "pneumonia",
+      ".",
+      "Started",
+      "amoxicillin",
+      "."
+    ],
+    "ner_tags": [
+      "B-AGE",
+      "I-AGE",
+      "I-AGE",
+      "B-SEX",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "B-SYMPTOM",
+      "O",
+      "O",
+      "B-DIAGNOSIS",
+      "O",
+      "O",
+      "B-MEDICATION",
+      "O"
+    ],
+    "extracted": {
+      "age": "42 year old",
+      "sex": "female",
+      "symptoms": [
+        "cough",
+        "fever"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "amoxicillin"
+      ]
+    }
+  }
+]
